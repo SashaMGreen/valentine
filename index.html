@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GLOBAL FADE OVERLAY -->
+<div id="fadeOverlay"></div>
+
+<!-- GLOBAL MUSIC -->
+<audio id="bgMusic" src="little-lies.mp3" loop></audio>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+
+  <div class="frame frame1" data-target="recordPage">
+    <img src="assets/frame.png" class="frame-img">
+    <img src="assets/record-player.png" class="frame-content">
+    <div class="number">1</div>
+  </div>
+
+  <div class="frame frame2" data-target="typePage">
+    <img src="assets/frame.png" class="frame-img">
+    <img src="assets/typewriter.png" class="frame-content">
+    <div class="number">2</div>
+  </div>
+
+  <div class="frame frame3" data-target="thirdPage">
+    <img src="assets/frame.png" class="frame-img">
+    <img src="assets/third.png" class="frame-content">
+    <div class="number">3</div>
+  </div>
+
+</section>
+
+<!-- ================= RECORD PAGE ================= -->
+<section id="recordPage" class="page">
+
+  <img src="assets/curtains.png" class="decor curtains">
+  <img src="assets/clouds.png" class="decor clouds">
+  <img src="assets/sun.png" class="decor sun">
+  <img src="assets/bird.png" class="decor bird">
+  <img src="assets/bee.png" class="decor bee">
+
+  <div class="record-container">
+    <img src="assets/record-player.png" id="recordPlayer">
+    <p class="caption">Turn on the record player.</p>
+  </div>
+
+  <img src="assets/piano-scrap.png" id="pianoScrap" class="hidden">
+
+  <button class="continue hidden" data-back="home">Continue</button>
+
+</section>
+
+<!-- ================= TYPEWRITER PAGE ================= -->
+<section id="typePage" class="page">
+
+  <img src="assets/monet-bottom.png" class="monet">
+  <img src="assets/umbrella.png" class="umbrella">
+  <img src="assets/accent-right.png" class="accent-right">
+
+  <div class="type-container">
+    <img src="assets/typewriter.png" id="typewriter">
+    <p class="caption">Read the paper on the typewriter.</p>
+  </div>
+
+  <img src="assets/letter-paper.png" id="letter" class="hidden">
+
+  <button class="continue hidden" data-back="home">Continue</button>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background: url('assets/background.jpg') center/cover fixed;
+  overflow: hidden;
+}
+
+/* subtle texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+/* pages */
+.page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+}
+
+/* fade overlay */
+#fadeOverlay {
+  position: fixed;
+  inset: 0;
+  background: #f8f4ea;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 999;
+}
+
+/* ================= HOME ================= */
+
+.frame {
+  position: absolute;
+  width: 280px;
+  cursor: pointer;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  animation: float 12s ease-in-out infinite;
+}
+
+.frame1 { top: 20%; left: 18%; transform: rotate(-2deg); }
+.frame2 { top: 25%; left: 45%; transform: rotate(1.5deg); }
+.frame3 { top: 22%; left: 72%; transform: rotate(-1deg); }
+
+.frame:hover {
+  transform: scale(1.05) rotate(0deg);
+  filter: drop-shadow(0 0 15px rgba(255,215,150,0.6));
+}
+
+.frame.visited {
+  filter: grayscale(60%) opacity(0.6);
+  pointer-events: none;
+}
+
+.frame.glow {
+  filter: drop-shadow(0 0 20px rgba(255,200,120,0.9));
+}
+
+.frame-img { width: 100%; }
+.frame-content {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+}
+
+.number {
+  position: absolute;
+  bottom: -30px;
+  right: -10px;
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================= FLOAT ================= */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ================= RECORD PAGE ================= */
+
+.record-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#recordPlayer {
+  width: 350px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#recordPlayer:hover {
+  transform: scale(1.05);
+}
+
+.caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+#pianoScrap {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  transition: opacity 1s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.continue {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 25px;
+  background: #f5eddc;
+  border: none;
+  font-family: 'Cormorant Garamond';
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* ================= TYPEWRITER PAGE ================= */
+
+.type-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#typewriter {
+  width: 320px;
+  cursor: pointer;
+}
+
+#letter {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  transition: opacity 1s ease, transform 0.6s ease;
+}
+
+#letter.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
