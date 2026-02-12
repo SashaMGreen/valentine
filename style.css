@@ -2,10 +2,8 @@ body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
   background: url('assets/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-position:50% 50%;
 }
 
 /* subtle texture overlay */
@@ -175,4 +173,5 @@ body::after {
   opacity: 1;
   transform: translateX(-50%) scale(1.05);
 }
+
 
