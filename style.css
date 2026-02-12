@@ -49,9 +49,9 @@ body::after {
   animation: float 12s ease-in-out infinite;
 }
 
-.frame1 { top: 22%; left: 30%; transform: rotate(-2deg); }
-.frame2 { top: 20%; left: 45%; transform: rotate(1.5deg); }
-.frame3 { top: 22%; left: 80%; transform: rotate(-1deg); }
+.frame1 { top: 22%; left: 20%; transform: rotate(-2deg); }
+.frame2 { top: 20%; left: 40%; transform: rotate(1.5deg); }
+.frame3 { top: 22%; left: 60%; transform: rotate(-1deg); }
 
 .frame:hover {
   transform: scale(1.05) rotate(0deg);
@@ -172,6 +172,7 @@ body::after {
   opacity: 1;
   transform: translateX(-50%) scale(1.05);
 }
+
 
 
 
