@@ -75,16 +75,16 @@ body {
 /* Record + Type Layout */
 .type-container {
   position: absolute;
-  top: 90%;
-  left: 45%;
+  top: 88%;
+  left: 49%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .record-container{
   position: absolute;
-  top: 80%;
-  left: 48%;
+  top: 78%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 #typewriter {
-  width: 550px;
+  width: 500px;
   cursor: pointer;
 }
 
@@ -132,5 +132,6 @@ body {
   border: none;
   cursor: pointer;
 }
+
 
 
