@@ -65,11 +65,24 @@ document.querySelectorAll(".bg-video").forEach(video => {
 /* Record Player */
 const recordPlayer = document.getElementById("recordPlayer");
 const pianoScrap = document.getElementById("pianoScrap");
+const music = document.getElementById("bgMusic");
 
 recordPlayer.addEventListener("click", () => {
-  music.play();
+
+  // Show the paper
   pianoScrap.classList.remove("hidden");
+
+  // Start music safely
+  music.currentTime = 0;
+
+  music.play().then(() => {
+    console.log("Music started successfully");
+  }).catch(error => {
+    console.log("Music failed to play:", error);
+  });
+
 });
+
 
 /* Typewriter */
 const typewriter = document.getElementById("typewriter");
@@ -78,4 +91,5 @@ const letter = document.getElementById("letter");
 typewriter.addEventListener("click", () => {
   letter.classList.remove("hidden");
 });
+
 
