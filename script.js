@@ -1,3 +1,16 @@
+let musicStarted = false;
+
+document.addEventListener("click", () => {
+  if (!musicStarted) {
+    music.play().then(() => {
+      musicStarted = true;
+    }).catch(err => {
+      console.log("Music blocked:", err);
+    });
+  }
+});
+
+
 const fadeOverlay = document.getElementById("fadeOverlay");
 const pages = document.querySelectorAll(".page");
 const frames = document.querySelectorAll(".frame");
@@ -65,3 +78,4 @@ const letter = document.getElementById("letter");
 typewriter.addEventListener("click", () => {
   letter.classList.remove("hidden");
 });
+
