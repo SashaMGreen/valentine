@@ -3,77 +3,65 @@ const pages = document.querySelectorAll(".page");
 const frames = document.querySelectorAll(".frame");
 const music = document.getElementById("bgMusic");
 
+/* On Load */
 window.onload = () => {
   fadeOverlay.style.opacity = "0";
-
-  if(localStorage.getItem("frame1") === "true") {
-    document.querySelector(".frame1").classList.add("visited");
-  }
-  if(localStorage.getItem("frame2") === "true") {
-    document.querySelector(".frame2").classList.add("visited");
-  }
-
-  if(localStorage.getItem("frame1") === "true" &&
-     localStorage.getItem("frame2") === "true") {
-      document.querySelector(".frame3").classList.add("glow");
-  }
 };
 
-/* PAGE TRANSITION */
+/* Page Transition */
 function goToPage(id) {
   fadeOverlay.style.opacity = "1";
+
   setTimeout(() => {
     pages.forEach(p => p.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+    const newPage = document.getElementById(id);
+    newPage.classList.add("active");
+
+    // Restart background video
+    const video = newPage.querySelector(".bg-video");
+    if (video) {
+      video.currentTime = 0;
+      video.play();
+    }
+
     fadeOverlay.style.opacity = "0";
   }, 600);
 }
 
-/* FRAME CLICKS */
+/* Frame Clicks */
 frames.forEach(frame => {
   frame.addEventListener("click", () => {
     goToPage(frame.dataset.target);
   });
 });
 
-/* CONTINUE BUTTONS */
+/* Continue Buttons */
 document.querySelectorAll(".continue").forEach(btn => {
   btn.addEventListener("click", () => {
     goToPage("home");
   });
 });
 
-/* RECORD PLAYER */
+/* Freeze Videos on Last Frame */
+document.querySelectorAll(".bg-video").forEach(video => {
+  video.addEventListener("ended", () => {
+    video.pause();
+  });
+});
+
+/* Record Player */
 const recordPlayer = document.getElementById("recordPlayer");
 const pianoScrap = document.getElementById("pianoScrap");
 
 recordPlayer.addEventListener("click", () => {
-  if(!localStorage.getItem("musicStarted")) {
-    music.play();
-    localStorage.setItem("musicStarted", "true");
-  }
-
+  music.play();
   pianoScrap.classList.remove("hidden");
-  document.querySelector("#recordPage .continue").classList.remove("hidden");
-
-  localStorage.setItem("frame1", "true");
-  document.querySelector(".frame1").classList.add("visited");
 });
 
-/* TYPEWRITER */
+/* Typewriter */
 const typewriter = document.getElementById("typewriter");
 const letter = document.getElementById("letter");
 
 typewriter.addEventListener("click", () => {
-  letter.classList.add("active");
   letter.classList.remove("hidden");
-
-  document.querySelector("#typePage .continue").classList.remove("hidden");
-
-  localStorage.setItem("frame2", "true");
-  document.querySelector(".frame2").classList.add("visited");
-
-  if(localStorage.getItem("frame1") === "true") {
-    document.querySelector(".frame3").classList.add("glow");
-  }
 });
