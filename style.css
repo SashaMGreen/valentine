@@ -76,7 +76,7 @@ body {
 .type-container {
   position: absolute;
   top: 90%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -84,7 +84,7 @@ body {
 .record-container{
   position: absolute;
   top: 80%;
-  left: 50%;
+  left: 48%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 #typewriter {
-  width: 600px;
+  width: 550px;
   cursor: pointer;
 }
 
@@ -132,4 +132,5 @@ body {
   border: none;
   cursor: pointer;
 }
+
 
