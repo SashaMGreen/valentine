@@ -60,7 +60,6 @@ body::after {
 
 .frame.visited {
   filter: grayscale(60%) opacity(0.6);
-  pointer-events: none;
 }
 
 .frame.glow {
@@ -172,6 +171,7 @@ body::after {
   opacity: 1;
   transform: translateX(-50%) scale(1.05);
 }
+
 
 
 
