@@ -132,8 +132,8 @@ body {
 /* initial bottle small bottom-left (not completely at edge) */
 #bottle {
   position: absolute;
-  bottom: 6%;
-  left: 8%;
+  bottom: 4%;
+  left: 10%;
   width: 90px;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -146,7 +146,7 @@ body {
   top: 38%;
   bottom: auto;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 200px;
   z-index: 6;
 }
 
@@ -163,7 +163,7 @@ body {
 /* stacked letters container */
 #lettersRow {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -290,3 +290,4 @@ body {
   cursor: pointer;
   background: white;
 }
+
