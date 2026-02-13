@@ -37,11 +37,15 @@
     <div class="number">3</div>
   </div>
 
+  <!-- NEW BUTTON (hidden initially) -->
+  <button id="finalContinue" class="continue hidden">
+    Continue
+  </button>
+
 </section>
 
 <!-- ================= RECORD PAGE ================= -->
 <section id="recordPage" class="page">
-
   <video class="bg-video" muted playsinline preload="auto">
     <source src="assets/record-transition.mp4" type="video/mp4">
   </video>
@@ -52,12 +56,10 @@
   </div>
 
   <button class="continue">Continue</button>
-
 </section>
 
 <!-- ================= TYPEWRITER PAGE ================= -->
 <section id="typePage" class="page">
-
   <video class="bg-video" muted playsinline preload="auto">
     <source src="assets/type-transition.mp4" type="video/mp4">
   </video>
@@ -70,20 +72,16 @@
   <img src="assets/letter-paper.jpg" id="letter" class="hidden">
 
   <button class="continue">Continue</button>
-
 </section>
 
 <!-- ================= THIRD PAGE ================= -->
 <section id="thirdPage" class="page">
-
   <video class="bg-video" muted playsinline preload="auto">
     <source src="assets/third-transition.mp4" type="video/mp4">
   </video>
 
   <div class="third-container">
-
     <img src="assets/bottle.png" id="bottle">
-
     <img src="assets/bottle-letter.png" id="bottleLetter" class="hidden">
 
     <div id="lettersRow" class="hidden">
@@ -92,10 +90,38 @@
       <img src="assets/letter3.png" class="stackLetter">
       <img src="assets/letter4.png" class="stackLetter">
     </div>
-
   </div>
 
   <button class="continue">Continue</button>
+</section>
+
+<!-- ================= FOURTH PAGE ================= -->
+<section id="valentinePage" class="page">
+
+  <div class="valentine-container">
+
+    <div class="valentine-text" id="valentineTopText"></div>
+
+    <!-- Sasha (Left) -->
+    <div class="character left">
+      <img id="sashaImg" src="assets/sasha-smile.png">
+      <div class="paper-box">
+        <img src="assets/paper-box.png">
+        <p>be my valentine?</p>
+      </div>
+    </div>
+
+    <!-- Nikki (Right) -->
+    <div class="character right">
+      <img id="nikkiImg" src="assets/nikki-smile.png">
+
+      <div class="response-buttons">
+        <button id="yesBtn">yes!!</button>
+        <button id="noBtn">no... :(</button>
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
