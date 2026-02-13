@@ -89,8 +89,8 @@ body {
 /* Make the record container absolutely positioned so it can sit at the very bottom middle */
 .record-container {
   position: absolute;
-  bottom: 40px;            /* bottom middle */
-  left: 50%;
+  bottom: 20px;            /* bottom middle */
+  left: 49%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
@@ -108,15 +108,15 @@ body {
 /* typewriter container anchored with bottom negative so it peeks in */
 .type-container {
   position: absolute;
-  bottom: -90px;           /* pushes it slightly below page so bottom is cropped */
-  left: 50%;
+  bottom: -60px;           /* pushes it slightly below page so bottom is cropped */
+  left: 45%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
 }
 
 #typewriter {
-  width: 520px;
+  width: 540px;
   cursor: pointer;
   display: block;
 }
@@ -132,9 +132,9 @@ body {
 /* initial bottle small bottom-left (not completely at edge) */
 #bottle {
   position: absolute;
-  bottom: 4%;
+  bottom: 3%;
   left: 10%;
-  width: 90px;
+  width: 80px;
   cursor: pointer;
   transition: all 0.5s ease;
   z-index: 3;
@@ -143,7 +143,7 @@ body {
 /* when bottle moves to center and grows */
 #bottle.center {
   left: 50%;
-  top: 38%;
+  top: 45%;
   bottom: auto;
   transform: translate(-50%, -50%);
   width: 200px;
@@ -153,7 +153,7 @@ body {
 /* bottle-letter (replaces bottle) centered above everything */
 #bottleLetter {
   position: absolute;
-  top: 38%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 320px;
@@ -172,7 +172,7 @@ body {
 }
 
 .stackLetter {
-  width: 260px;
+  width: 280px;
   cursor: pointer;
   margin-left: -110px;
   transition: transform 0.3s ease, z-index 0.2s;
@@ -290,4 +290,5 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
