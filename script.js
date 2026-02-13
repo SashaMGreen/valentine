@@ -66,7 +66,53 @@ recordPlayer.addEventListener("click", () => {
 
 });
 
+
+
+
+/* THIRD PAGE LOGIC */
+
+const bottle = document.getElementById("bottle");
+const bottleLetter = document.getElementById("bottleLetter");
+const thirdCaption = document.getElementById("thirdCaption");
+const lettersRow = document.getElementById("lettersRow");
+const stackLetters = document.querySelectorAll(".stackLetter");
+
+let bottleStage = 0;
+
+bottle.addEventListener("click", () => {
+
+  if(bottleStage === 0) {
+    bottle.classList.add("center");
+    thirdCaption.innerText = "Open the bottle!";
+    bottleStage = 1;
+  }
+  else if(bottleStage === 1) {
+    bottle.style.opacity = "0";
+    setTimeout(() => {
+      bottle.classList.add("hidden");
+      bottleLetter.classList.remove("hidden");
+      thirdCaption.innerText = "Open the letters.";
+      bottleStage = 2;
+    }, 600);
+  }
+});
+
+bottleLetter.addEventListener("click", () => {
+  bottleLetter.classList.add("hidden");
+  lettersRow.classList.remove("hidden");
+});
+
+/* LETTER STACK INTERACTION */
+
+stackLetters.forEach(letter => {
+  letter.addEventListener("click", () => {
+    stackLetters.forEach(l => l.style.zIndex = 0);
+    letter.style.zIndex = 10;
+  });
+});
+
 /* Typewriter */
 typewriter.addEventListener("click", () => {
   letter.classList.remove("hidden");
 });
+
