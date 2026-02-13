@@ -179,3 +179,82 @@ body {
   transform: translateY(-3px);
   background: rgba(255,255,255,1);
 }
+
+/* ================= FOURTH PAGE ================= */
+
+#valentinePage {
+  background: url("assets/background.jpg") center/cover no-repeat;
+}
+
+.valentine-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.valentine-text {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: black;
+}
+
+.character {
+  position: absolute;
+  bottom: 120px;
+  text-align: center;
+}
+
+.character.left {
+  left: 20%;
+}
+
+.character.right {
+  right: 20%;
+}
+
+.character img {
+  width: 220px;
+}
+
+.paper-box {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+}
+
+.paper-box img {
+  width: 100%;
+}
+
+.paper-box p {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.response-buttons {
+  margin-top: 20px;
+}
+
+.response-buttons button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: white;
+}
+
+
