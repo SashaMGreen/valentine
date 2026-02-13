@@ -11,6 +11,17 @@ const bottleLetter = document.getElementById("bottleLetter");
 const lettersRow = document.getElementById("lettersRow");
 const stackLetters = document.querySelectorAll(".stackLetter");
 
+const finalContinue = document.getElementById("finalContinue");
+
+const sashaImg = document.getElementById("sashaImg");
+const nikkiImg = document.getElementById("nikkiImg");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const valentineTopText = document.getElementById("valentineTopText");
+
+let visitedPages = new Set();
+let noClicks = 0;
+
 /* On Load */
 window.onload = () => {
   fadeOverlay.style.opacity = "0";
@@ -22,18 +33,16 @@ function goToPage(id) {
 
   setTimeout(() => {
     pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    fadeOverlay.style.opacity = "0";
 
-    const newPage = document.getElementById(id);
-    newPage.classList.add("active");
-
-    const video = newPage.querySelector(".bg-video");
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-      video.play().catch(err => console.log(err));
+    if (id === "recordPage" || id === "typePage" || id === "thirdPage") {
+      visitedPages.add(id);
+      if (visitedPages.size === 3) {
+        finalContinue.classList.remove("hidden");
+      }
     }
 
-    fadeOverlay.style.opacity = "0";
   }, 600);
 }
 
@@ -51,13 +60,18 @@ document.querySelectorAll(".continue").forEach(btn => {
   });
 });
 
+/* Final Continue */
+finalContinue.addEventListener("click", () => {
+  goToPage("valentinePage");
+});
+
 /* Record Player */
 recordPlayer.addEventListener("click", () => {
   music.currentTime = 0;
-  music.play().catch(err => console.log(err));
+  music.play();
 });
 
-/* Typewriter Letter */
+/* Typewriter */
 typewriter.addEventListener("click", (e) => {
   e.stopPropagation();
   letter.classList.remove("hidden");
@@ -69,7 +83,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-/* Bottle Logic */
+/* Bottle */
 bottle.addEventListener("click", (e) => {
   e.stopPropagation();
   bottleLetter.classList.remove("hidden");
@@ -81,18 +95,34 @@ bottleLetter.addEventListener("click", (e) => {
   lettersRow.classList.remove("hidden");
 });
 
-/* Close letters if clicking outside */
-document.addEventListener("click", (e) => {
-  if (!lettersRow.contains(e.target) && e.target !== bottleLetter) {
-    lettersRow.classList.add("hidden");
-  }
-});
-
-/* Stack interaction */
 stackLetters.forEach(letter => {
   letter.addEventListener("click", (e) => {
     e.stopPropagation();
     stackLetters.forEach(l => l.style.zIndex = 0);
     letter.style.zIndex = 10;
   });
+});
+
+/* Valentine Logic */
+noBtn.addEventListener("click", () => {
+  noClicks++;
+
+  if (noClicks === 1) {
+    sashaImg.src = "assets/sasha-mad.png";
+    nikkiImg.src = "assets/nikki-shocked.png";
+  }
+
+  if (noClicks >= 3) {
+    sashaImg.src = "assets/sasha-cry.png";
+  }
+});
+
+yesBtn.addEventListener("click", () => {
+  sashaImg.src = "assets/sasha-tongue.png";
+  nikkiImg.src = "assets/nikki-tongue.png";
+  valentineTopText.innerText =
+    "yayyyy! now we're officially each other's valentine :D";
+
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
 });
