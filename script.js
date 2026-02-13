@@ -3,9 +3,13 @@ const pages = document.querySelectorAll(".page");
 const frames = document.querySelectorAll(".frame");
 const music = document.getElementById("bgMusic");
 const recordPlayer = document.getElementById("recordPlayer");
-const pianoScrap = document.getElementById("pianoScrap");
 const typewriter = document.getElementById("typewriter");
 const letter = document.getElementById("letter");
+
+const bottle = document.getElementById("bottle");
+const bottleLetter = document.getElementById("bottleLetter");
+const lettersRow = document.getElementById("lettersRow");
+const stackLetters = document.querySelectorAll(".stackLetter");
 
 /* On Load */
 window.onload = () => {
@@ -26,14 +30,14 @@ function goToPage(id) {
     if (video) {
       video.pause();
       video.currentTime = 0;
-      video.play().catch(err => console.log("Video error:", err));
+      video.play().catch(err => console.log(err));
     }
 
     fadeOverlay.style.opacity = "0";
   }, 600);
 }
 
-/* Frame Clicks */
+/* Frame Click */
 frames.forEach(frame => {
   frame.addEventListener("click", () => {
     goToPage(frame.dataset.target);
@@ -47,72 +51,48 @@ document.querySelectorAll(".continue").forEach(btn => {
   });
 });
 
-/* Freeze Videos on Last Frame */
-document.querySelectorAll(".bg-video").forEach(video => {
-  video.addEventListener("ended", () => {
-    video.pause();
-  });
-});
-
 /* Record Player */
 recordPlayer.addEventListener("click", () => {
-
-  pianoScrap.classList.remove("hidden");
-
   music.currentTime = 0;
-  music.play().catch(error => {
-    console.log("Music failed:", error);
-  });
-
+  music.play().catch(err => console.log(err));
 });
 
+/* Typewriter Letter */
+typewriter.addEventListener("click", (e) => {
+  e.stopPropagation();
+  letter.classList.remove("hidden");
+});
 
-
-
-/* THIRD PAGE LOGIC */
-
-const bottle = document.getElementById("bottle");
-const bottleLetter = document.getElementById("bottleLetter");
-const thirdCaption = document.getElementById("thirdCaption");
-const lettersRow = document.getElementById("lettersRow");
-const stackLetters = document.querySelectorAll(".stackLetter");
-
-let bottleStage = 0;
-
-bottle.addEventListener("click", () => {
-
-  if(bottleStage === 0) {
-    bottle.classList.add("center");
-    thirdCaption.innerText = "Open the bottle!";
-    bottleStage = 1;
-  }
-  else if(bottleStage === 1) {
-    bottle.style.opacity = "0";
-    setTimeout(() => {
-      bottle.classList.add("hidden");
-      bottleLetter.classList.remove("hidden");
-      thirdCaption.innerText = "Open the letters.";
-      bottleStage = 2;
-    }, 600);
+document.addEventListener("click", (e) => {
+  if (!letter.contains(e.target) && e.target !== typewriter) {
+    letter.classList.add("hidden");
   }
 });
 
-bottleLetter.addEventListener("click", () => {
+/* Bottle Logic */
+bottle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  bottleLetter.classList.remove("hidden");
+});
+
+bottleLetter.addEventListener("click", (e) => {
+  e.stopPropagation();
   bottleLetter.classList.add("hidden");
   lettersRow.classList.remove("hidden");
 });
 
-/* LETTER STACK INTERACTION */
+/* Close letters if clicking outside */
+document.addEventListener("click", (e) => {
+  if (!lettersRow.contains(e.target) && e.target !== bottleLetter) {
+    lettersRow.classList.add("hidden");
+  }
+});
 
+/* Stack interaction */
 stackLetters.forEach(letter => {
-  letter.addEventListener("click", () => {
+  letter.addEventListener("click", (e) => {
+    e.stopPropagation();
     stackLetters.forEach(l => l.style.zIndex = 0);
     letter.style.zIndex = 10;
   });
 });
-
-/* Typewriter */
-typewriter.addEventListener("click", () => {
-  letter.classList.remove("hidden");
-});
-
