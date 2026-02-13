@@ -89,7 +89,7 @@ body {
 /* Make the record container absolutely positioned so it can sit at the very bottom middle */
 .record-container {
   position: absolute;
-  bottom: 20px;            /* bottom middle */
+  bottom: 15px;            /* bottom middle */
   left: 49%;
   transform: translateX(-50%);
   z-index: 3;
@@ -109,7 +109,7 @@ body {
 .type-container {
   position: absolute;
   bottom: -60px;           /* pushes it slightly below page so bottom is cropped */
-  left: 45%;
+  left: 48%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
@@ -146,14 +146,14 @@ body {
   top: 45%;
   bottom: auto;
   transform: translate(-50%, -50%);
-  width: 200px;
+  width: 170px;
   z-index: 6;
 }
 
 /* bottle-letter (replaces bottle) centered above everything */
 #bottleLetter {
   position: absolute;
-  top: 45%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 320px;
@@ -290,5 +290,6 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
