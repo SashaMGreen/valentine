@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Language" content="en">
-<meta name="google" content="notranslate">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="google" content="notranslate" />
 <title>For Nikki ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
@@ -14,36 +14,33 @@
 
 <div id="fadeOverlay"></div>
 
+<!-- global audio (no autoplay) -->
 <audio id="bgMusic" preload="auto">
   <source src="assets/Gypsy.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ================= HOME ================= -->
 <section id="home" class="page active">
-
   <div class="frame" data-target="recordPage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/record-player.png" class="frame-content">
+    <img src="assets/frame.png" class="frame-img" alt="frame">
+    <img src="assets/record-player.png" class="frame-content" alt="record in frame">
     <div class="number">1</div>
   </div>
 
   <div class="frame" data-target="typePage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/typewriter.png" class="frame-content">
+    <img src="assets/frame.png" class="frame-img" alt="frame">
+    <img src="assets/typewriter.png" class="frame-content" alt="typewriter in frame">
     <div class="number">2</div>
   </div>
 
   <div class="frame" data-target="thirdPage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/third.png" class="frame-content">
+    <img src="assets/frame.png" class="frame-img" alt="frame">
+    <img src="assets/third.png" class="frame-content" alt="bottle in frame">
     <div class="number">3</div>
   </div>
 
-  <!-- NEW BUTTON (hidden initially) -->
-  <button id="finalContinue" class="continue hidden">
-    Continue
-  </button>
-
+  <!-- only appears after visiting the three pages -->
+  <button id="finalContinue" class="continue hidden">Continue</button>
 </section>
 
 <!-- ================= RECORD PAGE ================= -->
@@ -52,17 +49,10 @@
     <source src="assets/record-transition.mp4" type="video/mp4">
   </video>
 
+  <!-- record positioned at exact bottom middle -->
   <div class="record-container">
-    <img src="assets/record-player.png" id="recordPlayer">
-    <p class="caption"
-   style="--caption-color: white; --caption-top: 40%; --caption-left: 50%;">
-  Make sure your volume is up and turn the record player on.
-</p>
-    
-    <div class="record-container movable"
-     style="--item-top: 62%; --item-left: 34%;">
-
-
+    <p class="caption" style="--caption-color: white; --caption-top: 78%; --caption-left: 50%;">Make sure your volume is up and turn the record player on.</p>
+    <img src="assets/record-player.png" id="recordPlayer" alt="record player">
   </div>
 
   <button class="continue">Continue</button>
@@ -74,19 +64,14 @@
     <source src="assets/type-transition.mp4" type="video/mp4">
   </video>
 
+  <!-- typewriter slightly below viewport (cropped) -->
   <div class="type-container">
-    <img src="assets/typewriter.png" id="typewriter">
-    <p class="caption"
-   style="--caption-color: black; --caption-top: 15%; --caption-left: 50%;">
-  Looks like there was a paper left on the typewriter. Maybe you should read it?
-</p>
-    <div class="type-container movable"
-     style="--item-top: 80%; --item-left: 52%;">
-
-
+    <p class="caption" style="--caption-color: black; --caption-top: 20%; --caption-left: 50%;">Looks like there was a paper left on the typewriter. Maybe you should read it?</p>
+    <img src="assets/typewriter.png" id="typewriter" alt="typewriter">
   </div>
 
-  <img src="assets/letter-paper.jpg" id="letter" class="hidden">
+  <!-- letter pops in centered above everything -->
+  <img src="assets/letter-paper.jpg" id="letter" class="hidden" alt="letter">
 
   <button class="continue">Continue</button>
 </section>
@@ -98,62 +83,52 @@
   </video>
 
   <div class="third-container">
-    <img src="assets/bottle.png" id="bottle">
-    <img src="assets/bottle-letter.png" id="bottleLetter" class="hidden">
-    <p class="caption"
-   style="--caption-color: black; --caption-top: 20%; --caption-left: 50%;">
-  Looks like someone lost a bottle. . . Would you mind fetching it?
-</p>
+    <!-- small bottle bottom-left (not completely at edge) -->
+    <img src="assets/bottle.png" id="bottle" alt="bottle">
 
+    <!-- bottle-letter replaces bottle after second click -->
+    <img src="assets/bottle-letter.png" id="bottleLetter" class="hidden" alt="bottle letter">
 
+    <!-- caption bottom-middle -->
+    <p class="caption" id="thirdCaption" style="--caption-color: black; --caption-bottom: 120px; --caption-left: 50%;">
+      Looks like someone lost a bottle... would you mind fetching it?
+    </p>
+
+    <!-- stacked letters; initially hidden -->
     <div id="lettersRow" class="hidden">
-      <img src="assets/letter1.png" class="stackLetter">
-      <img src="assets/letter2.png" class="stackLetter">
-      <img src="assets/letter3.png" class="stackLetter">
-      <img src="assets/letter4.png" class="stackLetter">
+      <img src="assets/letter1.png" class="stackLetter" alt="letter 1">
+      <img src="assets/letter2.png" class="stackLetter" alt="letter 2">
+      <img src="assets/letter3.png" class="stackLetter" alt="letter 3">
+      <img src="assets/letter4.png" class="stackLetter" alt="letter 4">
     </div>
   </div>
 
   <button class="continue">Continue</button>
 </section>
 
-<!-- ================= FOURTH PAGE ================= -->
+<!-- ================= FOURTH PAGE (valentine) ================= -->
 <section id="valentinePage" class="page">
-
   <div class="valentine-container">
-
     <div class="valentine-text" id="valentineTopText"></div>
 
-    <!-- Sasha (Left) -->
     <div class="character left">
-      <img id="sashaImg" src="assets/sasha-smile.png">
+      <img id="sashaImg" src="assets/sasha-smile.png" alt="sasha">
       <div class="paper-box">
-        <img src="assets/paper-box.png">
+        <img src="assets/paper-box.png" alt="paper">
         <p>be my valentine?</p>
       </div>
     </div>
 
-    <!-- Nikki (Right) -->
     <div class="character right">
-      <img id="nikkiImg" src="assets/nikki-smile.png">
-
+      <img id="nikkiImg" src="assets/nikki-smile.png" alt="nikki">
       <div class="response-buttons">
         <button id="yesBtn">yes!!</button>
         <button id="noBtn">no... :(</button>
       </div>
     </div>
-
   </div>
-
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
