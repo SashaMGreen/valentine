@@ -153,7 +153,7 @@ body {
 }
 
 .stackLetter {
-  width: 260px;
+  width: 230px;
   cursor: pointer;
   margin-left: -110px;
   transition: transform 0.4s ease, z-index 0.3s;
@@ -188,4 +188,5 @@ body {
   transform: translateY(-3px);
   background: rgba(255,255,255,1);
 }
+
 
