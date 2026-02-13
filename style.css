@@ -80,9 +80,18 @@ body {
 
 /* ================= RECORD & TYPE ================= */
 
-.record-container,
-.type-container {
-  text-align: center;
+.type-container { 
+  position: absolute; 
+  top: 77%; left: 49%; 
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+} 
+.record-container { 
+  position: absolute; 
+  top: 78%; 
+  left: 49%; 
+  transform: translate(-50%, -50%);
+  text-align: center; 
 }
 
 #recordPlayer {
@@ -179,3 +188,4 @@ body {
   transform: translateY(-3px);
   background: rgba(255,255,255,1);
 }
+
