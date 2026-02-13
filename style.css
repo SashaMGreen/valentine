@@ -82,9 +82,16 @@ body {
 
 /* ================= RECORD & TYPE ================= */
 
-.record-container,
-.type-container {
-  text-align: center;
+#recordPage .record-container {
+  bottom: 60px;   /* distance from bottom of screen */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#typePage .type-container {
+  bottom: -20px;   /* negative = push it below the viewport */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #recordPlayer {
@@ -301,6 +308,12 @@ body {
   transform: translate(-50%, -50%);
   z-index: 3;
 }
+
+.page {
+  overflow: hidden;
+}
+
+
 
 
 
