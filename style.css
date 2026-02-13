@@ -110,7 +110,7 @@ body {
 /* Make the record container absolutely positioned so it can sit at the very bottom middle */
 .record-container {
   position: absolute;
-  bottom: 15px;            /* bottom middle */
+  bottom: 5px;            /* bottom middle */
   left: 49%;
   transform: translateX(-50%);
   z-index: 3;
@@ -118,7 +118,7 @@ body {
 }
 
 #recordPlayer {
-  width: 360px;
+  width: 350px;
   cursor: pointer;
   display: block;
   margin: 0 auto;
@@ -130,7 +130,7 @@ body {
 .type-container {
   position: absolute;
   bottom: -60px;           /* pushes it slightly below page so bottom is cropped */
-  left: 48%;
+  left: 49%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
@@ -193,7 +193,7 @@ body {
 }
 
 .stackLetter {
-  width: 280px;
+  width: 300px;
   cursor: pointer;
   margin-left: -110px;
   transition: transform 0.3s ease, z-index 0.2s;
@@ -311,6 +311,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
