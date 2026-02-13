@@ -268,13 +268,31 @@ body {
 }
 
 .caption {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+
+  /* customizable variables */
+  color: var(--caption-color, black);
+  top: var(--caption-top, auto);
+  bottom: var(--caption-bottom, auto);
+  left: var(--caption-left, 50%);
+  right: var(--caption-right, auto);
+
+  transform: translateX(-50%);
+  text-align: center;
+
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+
+  z-index: 5;
+  pointer-events: none;
 }
+
 
 .continue {
   z-index: 3;
 }
+
 
 
 
