@@ -75,8 +75,8 @@ body {
 /* Record + Type Layout */
 .type-container {
   position: absolute;
-  top: 88%;
-  left: 49%;
+  top: 80%;
+  left: 53%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -84,7 +84,7 @@ body {
 .record-container{
   position: absolute;
   top: 78%;
-  left: 50%;
+  left: 53%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -132,6 +132,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
 
 
 
