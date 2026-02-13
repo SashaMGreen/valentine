@@ -10,10 +10,8 @@
 </head>
 <body>
 
-<!-- GLOBAL FADE OVERLAY -->
 <div id="fadeOverlay"></div>
 
-<!-- GLOBAL MUSIC -->
 <audio id="bgMusic" preload="auto">
   <source src="assets/little-lies.mp3" type="audio/mpeg">
 </audio>
@@ -21,19 +19,19 @@
 <!-- ================= HOME ================= -->
 <section id="home" class="page active">
 
-  <div class="frame frame1" data-target="recordPage">
+  <div class="frame" data-target="recordPage">
     <img src="assets/frame.png" class="frame-img">
     <img src="assets/record-player.png" class="frame-content">
     <div class="number">1</div>
   </div>
 
-  <div class="frame frame2" data-target="typePage">
+  <div class="frame" data-target="typePage">
     <img src="assets/frame.png" class="frame-img">
     <img src="assets/typewriter.png" class="frame-content">
     <div class="number">2</div>
   </div>
 
-  <div class="frame frame3" data-target="thirdPage">
+  <div class="frame" data-target="thirdPage">
     <img src="assets/frame.png" class="frame-img">
     <img src="assets/third.png" class="frame-content">
     <div class="number">3</div>
@@ -53,16 +51,14 @@
     <p class="caption">Turn on the record player.</p>
   </div>
 
-  <img src="assets/piano-scrap.png" id="pianoScrap" class="hidden">
-
   <button class="continue">Continue</button>
 
 </section>
-  
+
 <!-- ================= TYPEWRITER PAGE ================= -->
 <section id="typePage" class="page">
 
-    <video class="bg-video" muted playsinline preload="auto">
+  <video class="bg-video" muted playsinline preload="auto">
     <source src="assets/type-transition.mp4" type="video/mp4">
   </video>
 
@@ -77,19 +73,19 @@
 
 </section>
 
-  <!-- ================= THIRD PAGE ================= -->
+<!-- ================= THIRD PAGE ================= -->
 <section id="thirdPage" class="page">
+
+  <video class="bg-video" muted playsinline preload="auto">
+    <source src="assets/third-transition.mp4" type="video/mp4">
+  </video>
 
   <div class="third-container">
 
-    <img src="assets/bottle.png" id="bottle" class="float">
-
-    <p class="caption" id="thirdCaption">
-      Find the bottle with a special message inside.
-    </p>
+    <img src="assets/bottle.png" id="bottle">
 
     <img src="assets/bottle-letter.png" id="bottleLetter" class="hidden">
-    
+
     <div id="lettersRow" class="hidden">
       <img src="assets/letter1.png" class="stackLetter">
       <img src="assets/letter2.png" class="stackLetter">
@@ -99,15 +95,10 @@
 
   </div>
 
+  <button class="continue">Continue</button>
+
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
