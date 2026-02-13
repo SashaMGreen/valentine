@@ -1,3 +1,7 @@
+#home {
+  background: url("assets/background.jpg") center/cover no-repeat;
+}
+
 body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
@@ -183,6 +187,7 @@ body {
 .stackLetter:hover {
   transform: scale(1.05);
 }
+
 
 
 
