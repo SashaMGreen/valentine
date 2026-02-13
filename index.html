@@ -1,103 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>For Nikki 💌</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="fadeOverlay"></div>
-
-<audio id="bgMusic" preload="auto">
-  <source src="assets/little-lies.mp3" type="audio/mpeg">
-</audio>
-
-<!-- ================= HOME ================= -->
+<!-- ================= HOME PAGE ================= -->
 <section id="home" class="page active">
+  <div class="frames-wrapper">
 
-  <div class="frame" data-target="recordPage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/record-player.png" class="frame-content">
-    <div class="number">1</div>
-  </div>
+    <div class="frame" id="frame1">
+      <img src="assets/frame.png" class="frame-img">
+      <img src="assets/record.png" class="frame-content">
+      <div class="number">1</div>
+    </div>
 
-  <div class="frame" data-target="typePage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/typewriter.png" class="frame-content">
-    <div class="number">2</div>
-  </div>
+    <div class="frame" id="frame2">
+      <img src="assets/frame.png" class="frame-img">
+      <img src="assets/typewriter.png" class="frame-content">
+      <div class="number">2</div>
+    </div>
 
-  <div class="frame" data-target="thirdPage">
-    <img src="assets/frame.png" class="frame-img">
-    <img src="assets/third.png" class="frame-content">
-    <div class="number">3</div>
-  </div>
-
-</section>
-
-<!-- ================= RECORD PAGE ================= -->
-<section id="recordPage" class="page">
-
-  <video class="bg-video" muted playsinline preload="auto">
-    <source src="assets/record-transition.mp4" type="video/mp4">
-  </video>
-
-  <div class="record-container">
-    <img src="assets/record-player.png" id="recordPlayer">
-    <p class="caption">Turn on the record player.</p>
-  </div>
-
-  <button class="continue">Continue</button>
-
-</section>
-
-<!-- ================= TYPEWRITER PAGE ================= -->
-<section id="typePage" class="page">
-
-  <video class="bg-video" muted playsinline preload="auto">
-    <source src="assets/type-transition.mp4" type="video/mp4">
-  </video>
-
-  <div class="type-container">
-    <img src="assets/typewriter.png" id="typewriter">
-    <p class="caption">Read the paper on the typewriter.</p>
-  </div>
-
-  <img src="assets/letter-paper.jpg" id="letter" class="hidden">
-
-  <button class="continue">Continue</button>
-
-</section>
-
-<!-- ================= THIRD PAGE ================= -->
-<section id="thirdPage" class="page">
-
-  <video class="bg-video" muted playsinline preload="auto">
-    <source src="assets/third-transition.mp4" type="video/mp4">
-  </video>
-
-  <div class="third-container">
-
-    <img src="assets/bottle.png" id="bottle">
-
-    <img src="assets/bottle-letter.png" id="bottleLetter" class="hidden">
-
-    <div id="lettersRow" class="hidden">
-      <img src="assets/letter1.png" class="stackLetter">
-      <img src="assets/letter2.png" class="stackLetter">
-      <img src="assets/letter3.png" class="stackLetter">
-      <img src="assets/letter4.png" class="stackLetter">
+    <div class="frame" id="frame3">
+      <img src="assets/frame.png" class="frame-img">
+      <img src="assets/bottle.png" class="frame-content">
+      <div class="number">3</div>
     </div>
 
   </div>
 
-  <button class="continue">Continue</button>
-
+  <button id="homeContinue" class="continue hidden">
+    Continue →
+  </button>
 </section>
+
+
+<!-- ================= RECORD PAGE ================= -->
+<section id="recordPage" class="page">
+  <div class="item-container">
+    <img src="assets/record.png" id="recordPlayer" class="adjustable">
+    <div class="caption">Click to play our song 🎶</div>
+  </div>
+  <button class="continue" onclick="goHome()">Back</button>
+</section>
+
+
+<!-- ================= TYPEWRITER PAGE ================= -->
+<section id="typePage" class="page">
+  <div class="item-container">
+    <img src="assets/typewriter.png" id="typewriter" class="adjustable">
+    <div id="letter" class="hidden letter">
+      My dearest Nikki,<br><br>
+      Every little moment with you feels like magic...
+    </div>
+  </div>
+  <button class="continue" onclick="goHome()">Back</button>
+</section>
+
+
+<!-- ================= BOTTLE GAME PAGE ================= -->
+<section id="bottlePage" class="page">
+
+  <img src="assets/bottle.png" id="bottleGameImg" class="small-left">
+
+  <div id="gameCaption" class="caption center-text">
+    I lost my bottle, could you grab it?
+  </div>
+
+  <img src="assets/letter.png" id="singleLetter" class="hidden letter">
+
+  <div id="lettersRow" class="hidden">
+    <img src="assets/letter1.png" class="stackLetter">
+    <img src="assets/letter2.png" class="stackLetter">
+    <img src="assets/letter3.png" class="stackLetter">
+    <img src="assets/letter4.png" class="stackLetter">
+  </div>
+
+  <button class="continue" onclick="goHome()">Back</button>
+</section>
+
+
+<!-- ================= VALENTINE PAGE ================= -->
+<section id="valentinePage" class="page">
+
+  <div id="finalMessage" class="hidden finalText">
+    yayyyy! now we're officially each other's valentine :D
+  </div>
+
+  <div class="valentine-container">
+
+    <!-- SASHA (LEFT) -->
+    <div class="character">
+      <img id="sashaImg"
+        src="https://64.media.tumblr.com/003dc0bcb5b221f1029495f568cee4b7/1b35f3673290b7c1-32/s500x750/41193b2972d62a709f8e577d44407400a7f5bab6.pnj">
+      <div class="speech-bubble">
+        be my valentine?
+      </div>
+    </div>
+
+    <!-- NIKKI (RIGHT) -->
+    <div class="character">
+      <img id="nikkiImg"
+        src="https://64.media.tumblr.com/037f2713566571623b32cf97d9af6ead/1b35f3673290b7c1-eb/s400x600/1eed700445dce22c71c2a2af7e26cfd67cd3b705.pnj">
+
+      <div class="response-buttons">
+        <button id="yesBtn">yes!!</button>
+        <button id="noBtn">no. . . :(</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<audio id="bgMusic" src="assets/song.mp3" loop></audio>
 
 <script src="script.js"></script>
 </body>
