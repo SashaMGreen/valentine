@@ -105,7 +105,7 @@ body {
   color: white;
 }
 
-#letter
+#letter,
 #bottleLetter {
   position: absolute;
   top: 50%;
@@ -258,6 +258,24 @@ body {
   cursor: pointer;
   background: white;
 }
+
+.record-container,
+.type-container,
+.third-container,
+.valentine-container {
+  position: relative;
+  z-index: 2;
+}
+
+.caption {
+  position: relative;
+  z-index: 2;
+}
+
+.continue {
+  z-index: 3;
+}
+
 
 
 
