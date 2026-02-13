@@ -200,34 +200,34 @@ body {
   width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 40px;
   color: black;
 }
 
 .character {
   position: absolute;
-  bottom: 120px;
+  bottom: 100px;
   text-align: center;
 }
 
 .character.left {
-  left: 20%;
+  left: 30%;
 }
 
 .character.right {
-  right: 20%;
+  right: 30%;
 }
 
 .character img {
-  width: 220px;
+  width: 200px;
 }
 
 .paper-box {
   position: absolute;
-  top: -160px;
-  left: 50%;
+  top: -140px;
+  left: 45%;
   transform: translateX(-50%);
-  width: 260px;
+  width: 200px;
 }
 
 .paper-box img {
@@ -236,7 +236,7 @@ body {
 
 .paper-box p {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Playfair Display', serif;
@@ -258,6 +258,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
