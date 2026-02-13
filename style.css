@@ -1,7 +1,3 @@
-#home {
-  background: url("assets/background.jpg") center/cover no-repeat;
-}
-
 body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
@@ -18,7 +14,9 @@ body {
 }
 
 .page.active {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 1;
 }
 
@@ -33,7 +31,7 @@ body {
   z-index: 999;
 }
 
-/* Background videos */
+/* Background video */
 .bg-video {
   position: absolute;
   inset: 0;
@@ -43,63 +41,57 @@ body {
   z-index: -1;
 }
 
-/* Home frames */
+/* ================= HOME ================= */
+
+#home {
+  background: url("assets/background.jpg") center/cover no-repeat;
+  gap: 120px;
+}
+
 .frame {
-  position: absolute;
-  width: 280px;
+  position: relative;
+  width: 340px;
   cursor: pointer;
   transition: transform 0.4s ease;
 }
 
-.frame1 { top: 20%; left: 15%; }
-.frame2 { top: 22%; left: 42%; }
-.frame3 { top: 20%; left: 69%; }
-
 .frame:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-.frame-img { width: 100%; }
+.frame-img {
+  width: 100%;
+}
 
 .frame-content {
   position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 40%;
+  top: 18%;
+  left: 18%;
+  width: 48%;
 }
 
 .number {
   position: absolute;
-  bottom: -30px;
+  bottom: -35px;
   right: -10px;
-  font-size: 40px;
+  font-size: 48px;
   font-family: 'Playfair Display', serif;
 }
 
-/* Record + Type Layout */
+/* ================= RECORD & TYPE ================= */
+
+.record-container,
 .type-container {
-  position: absolute;
-  top: 77%;
-  left: 49%;
-  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.record-container{
-  position: absolute;
-  top: 78%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-#recordPlayer{
-  width: 320px;
+#recordPlayer {
+  width: 350px;
   cursor: pointer;
 }
 
 #typewriter {
-  width: 500px;
+  width: 520px;
   cursor: pointer;
 }
 
@@ -111,30 +103,19 @@ body {
   color: white;
 }
 
-#pianoScrap,
-#letter {
+#letter,
+#bottleLetter {
   position: absolute;
-  bottom: 15%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  transition: opacity 1s ease;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  transition: opacity 0.5s ease;
 }
 
 .hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.continue {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 25px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
 }
 
 /* ================= THIRD PAGE ================= */
@@ -148,24 +129,9 @@ body {
   position: absolute;
   bottom: 10%;
   left: 10%;
-  width: 180px;
+  width: 200px;
   cursor: pointer;
-  transition: all 0.8s ease;
-}
-
-#bottle.center {
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%) scale(1.2);
-}
-
-#bottleLetter {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  transition: opacity 0.8s ease;
+  transition: transform 0.6s ease;
 }
 
 #lettersRow {
@@ -174,25 +140,42 @@ body {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: -40px;
+  align-items: center;
 }
 
 .stackLetter {
-  width: 220px;
+  width: 260px;
   cursor: pointer;
-  transition: transform 0.4s ease, z-index 0.4s;
-  margin-left: -60px;
+  margin-left: -110px;
+  transition: transform 0.4s ease, z-index 0.3s;
+}
+
+.stackLetter:first-child {
+  margin-left: 0;
 }
 
 .stackLetter:hover {
   transform: scale(1.05);
 }
 
+/* ================= CONTINUE BUTTON ================= */
 
+.continue {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
 
-
-
-
-
-
-
+.continue:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,1);
+}
