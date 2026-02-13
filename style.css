@@ -56,13 +56,15 @@ body {
 
 .frame {
   position: relative;
-  width: 320px;
-  height: 240px;
+  width: 420px;
+  height: 340px;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
 }
 
 .frame:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(2deg);
 }
 
 .frame-img {
@@ -76,12 +78,11 @@ body {
 
 .frame-image {
   position: absolute;
-  max-width: 85%;
-  max-height: 85%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  width: 55%;         
+  height: auto;
 }
 
 
@@ -94,11 +95,15 @@ body {
 
 .number {
   position: absolute;
-  bottom: -35px;
-  right: -10px;
-  font-size: 48px;
+  right: -40px;     /* pushes number outside frame */
+  bottom: 10px;
+  font-size: 52px;
   font-family: 'Playfair Display', serif;
+  color: #2b2b2b;
+  opacity: 0.85;
+  pointer-events: none;
 }
+
 
 /* ================= RECORD PAGE ================= */
 
@@ -306,6 +311,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
