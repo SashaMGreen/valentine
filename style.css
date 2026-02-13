@@ -133,6 +133,59 @@ body {
   cursor: pointer;
 }
 
+/* ================= THIRD PAGE ================= */
+
+.third-container {
+  position: absolute;
+  inset: 0;
+}
+
+#bottle {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 180px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+#bottle.center {
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(1.2);
+}
+
+#bottleLetter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  transition: opacity 0.8s ease;
+}
+
+#lettersRow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: -40px;
+}
+
+.stackLetter {
+  width: 220px;
+  cursor: pointer;
+  transition: transform 0.4s ease, z-index 0.4s;
+  margin-left: -60px;
+}
+
+.stackLetter:hover {
+  transform: scale(1.05);
+}
+
+
+
 
 
 
