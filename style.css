@@ -1,16 +1,18 @@
+/* base */
 body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
   overflow: hidden;
 }
 
-/* Pages */
+/* pages */
 .page {
   position: absolute;
   inset: 0;
   display: none;
   opacity: 0;
   transition: opacity 0.6s ease;
+  overflow: hidden;
 }
 
 .page.active {
@@ -20,7 +22,7 @@ body {
   opacity: 1;
 }
 
-/* Fade overlay */
+/* fade overlay */
 #fadeOverlay {
   position: fixed;
   inset: 0;
@@ -31,23 +33,24 @@ body {
   z-index: 999;
 }
 
-/* Background video */
+/* background video: behind everything */
 .bg-video {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  top: 0;
-  left: 0;
   z-index: 0;
 }
-
 
 /* ================= HOME ================= */
 
 #home {
   background: url("assets/background.jpg") center/cover no-repeat;
   gap: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .frame {
@@ -63,6 +66,7 @@ body {
 
 .frame-img {
   width: 100%;
+  display: block;
 }
 
 .frame-content {
@@ -80,51 +84,41 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* ================= RECORD & TYPE ================= */
+/* ================= RECORD PAGE ================= */
 
-#recordPage .record-container {
-  bottom: 60px;   /* distance from bottom of screen */
+/* Make the record container absolutely positioned so it can sit at the very bottom middle */
+.record-container {
+  position: absolute;
+  bottom: 40px;            /* bottom middle */
   left: 50%;
   transform: translateX(-50%);
-}
-
-#typePage .type-container {
-  bottom: -20px;   /* negative = push it below the viewport */
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
 }
 
 #recordPlayer {
-  width: 350px;
+  width: 360px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ================= TYPEWRITER PAGE ================= */
+
+/* typewriter container anchored with bottom negative so it peeks in */
+.type-container {
+  position: absolute;
+  bottom: -90px;           /* pushes it slightly below page so bottom is cropped */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
 }
 
 #typewriter {
   width: 520px;
   cursor: pointer;
-}
-
-.caption {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 22px;
-  margin-top: 20px;
-  color: white;
-}
-
-#letter,
-#bottleLetter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  transition: opacity 0.5s ease;
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
+  display: block;
 }
 
 /* ================= THIRD PAGE ================= */
@@ -132,39 +126,79 @@ body {
 .third-container {
   position: absolute;
   inset: 0;
+  z-index: 3;
 }
 
+/* initial bottle small bottom-left (not completely at edge) */
 #bottle {
   position: absolute;
-  bottom: 3%;
-  left: 6%;
-  width: 80px;
+  bottom: 6%;
+  left: 8%;
+  width: 90px;
   cursor: pointer;
-  transition: transform 0.6s ease;
+  transition: all 0.5s ease;
+  z-index: 3;
 }
 
+/* when bottle moves to center and grows */
+#bottle.center {
+  left: 50%;
+  top: 38%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  z-index: 6;
+}
+
+/* bottle-letter (replaces bottle) centered above everything */
+#bottleLetter {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  z-index: 6;
+}
+
+/* stacked letters container */
 #lettersRow {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
+  z-index: 6;
 }
 
 .stackLetter {
-  width: 300px;
+  width: 260px;
   cursor: pointer;
   margin-left: -110px;
-  transition: transform 0.4s ease, z-index 0.3s;
+  transition: transform 0.3s ease, z-index 0.2s;
 }
 
+/* first letter not offset */
 .stackLetter:first-child {
   margin-left: 0;
 }
 
-.stackLetter:hover {
-  transform: scale(1.05);
+/* ================= CAPTIONS (customizable via inline CSS variables) ================= */
+
+.caption {
+  position: absolute;
+  color: var(--caption-color, black);
+  top: var(--caption-top, auto);
+  bottom: var(--caption-bottom, auto);
+  left: var(--caption-left, 50%);
+  right: var(--caption-right, auto);
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  z-index: 5;
+  pointer-events: none;
 }
 
 /* ================= CONTINUE BUTTON ================= */
@@ -176,20 +210,31 @@ body {
   padding: 12px 28px;
   font-size: 18px;
   font-family: 'Playfair Display', serif;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+  z-index: 7;
 }
 
 .continue:hover {
   transform: translateY(-3px);
-  background: rgba(255,255,255,1);
 }
 
-/* ================= FOURTH PAGE ================= */
+/* ================= LETTER POPUP ================= */
+
+#letter,
+#bottleLetter {
+  display: none; /* hidden by default; JS toggles via .hidden removal */
+}
+
+/* visible class helper (if you prefer) */
+.visible {
+  display: block !important;
+}
+
+/* ================= VALENTINE PAGE ================= */
 
 #valentinePage {
   background: url("assets/background.jpg") center/cover no-repeat;
@@ -207,7 +252,7 @@ body {
   width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
+  font-size: 28px;
   color: black;
 }
 
@@ -217,37 +262,17 @@ body {
   text-align: center;
 }
 
-.character.left {
-  left: 30%;
-}
+.character.left { left: 30%; }
+.character.right { right: 30%; }
 
-.character.right {
-  right: 30%;
-}
-
-.character img {
-  width: 200px;
-}
+.character img { width: 200px; }
 
 .paper-box {
   position: absolute;
   top: -140px;
-  left: 45%;
+  left: 50%;
   transform: translateX(-50%);
   width: 200px;
-}
-
-.paper-box img {
-  width: 100%;
-}
-
-.paper-box p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
 }
 
 .response-buttons {
@@ -265,58 +290,3 @@ body {
   cursor: pointer;
   background: white;
 }
-
-.record-container,
-.type-container,
-.third-container,
-.valentine-container {
-  position: relative;
-  z-index: 2;
-}
-
-.caption {
-  position: absolute;
-
-  /* customizable variables */
-  color: var(--caption-color, black);
-  top: var(--caption-top, auto);
-  bottom: var(--caption-bottom, auto);
-  left: var(--caption-left, 50%);
-  right: var(--caption-right, auto);
-
-  transform: translateX(-50%);
-  text-align: center;
-
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 22px;
-
-  z-index: 5;
-  pointer-events: none;
-}
-
-
-.continue {
-  z-index: 3;
-}
-
-
-.movable {
-  position: absolute;
-  top: var(--item-top, 50%);
-  left: var(--item-left, 50%);
-  transform: translate(-50%, -50%);
-  z-index: 3;
-}
-
-.page {
-  overflow: hidden;
-}
-
-
-
-
-
-
-
-
