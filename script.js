@@ -32,8 +32,27 @@ function goToPage(id) {
   fadeOverlay.style.opacity = "1";
 
   setTimeout(() => {
-    pages.forEach(p => p.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+    pages.forEach(p => {
+      p.classList.remove("active");
+
+      // pause all videos when leaving pages
+      const vid = p.querySelector("video");
+      if (vid) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+    });
+
+    const newPage = document.getElementById(id);
+    newPage.classList.add("active");
+
+    // play video if it exists
+    const newVideo = newPage.querySelector("video");
+    if (newVideo) {
+      newVideo.currentTime = 0;
+      newVideo.play();
+    }
+
     fadeOverlay.style.opacity = "0";
 
     if (id === "recordPage" || id === "typePage" || id === "thirdPage") {
@@ -126,3 +145,4 @@ yesBtn.addEventListener("click", () => {
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
 });
+
