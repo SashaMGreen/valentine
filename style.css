@@ -90,9 +90,21 @@ body {
   height: auto;
 }
 
+.record-player {
+  width: 35%;
+}
+
+.typewriter {
+  width: 35%;
+}
+
+.bottle {
+  width: 25%;
+}
+
 .number {
   position: absolute;
-  left: 20px;     /* pushes number outside frame */
+  left: 40px;     /* pushes number outside frame */
   font-size: 50px;
   font-family: 'Playfair Display', serif;
   color: #2b2b2b;
@@ -374,6 +386,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 25px;
 }
+
 
 
 
