@@ -114,21 +114,26 @@ if (recordPlayer) {
 
 /* ---------------- TYPEWRITER / LETTER ---------------- */
 /* clicking typewriter shows letter centered above everything */
+/* ---------------- TYPEWRITER / LETTER ---------------- */
 if (typewriter && letterPaper) {
   typewriter.addEventListener("click", (e) => {
     e.stopPropagation();
     letterPaper.classList.remove("hidden");
     letterPaper.style.display = "block";
-    letterPaper.style.zIndex = 20;
+    letterPaper.style.zIndex = "20";
   });
 
   document.addEventListener("click", (e) => {
-    if (!letterPaper.contains(e.target) && e.target !== typewriter) {
+    if (
+      !letterPaper.contains(e.target) &&
+      e.target !== typewriter
+    ) {
       letterPaper.classList.add("hidden");
       letterPaper.style.display = "none";
     }
   });
 }
+
 
 /* ---------------- BOTTLE GAME ---------------- */
 if (bottle) {
@@ -211,5 +216,6 @@ if (noBtn && yesBtn) {
     noBtn.style.display = "none";
   });
 }
+
 
 
