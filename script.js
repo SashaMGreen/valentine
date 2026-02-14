@@ -8,7 +8,7 @@ const music = document.getElementById("bgMusic");
 /* page-specific */
 const recordPlayer = document.getElementById("recordPlayer");
 const typewriter = document.getElementById("typewriter");
-const letter-paper = document.getElementById("letter-paper");
+const letterPaper = document.getElementById("letter");
 
 const bottle = document.getElementById("bottle");
 const bottleLetter = document.getElementById("bottleLetter");
@@ -209,4 +209,5 @@ if (yesBtn) {
     noBtn.style.display = "none";
   });
 }
+
 
