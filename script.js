@@ -23,6 +23,7 @@ const nikkiImg = document.getElementById("nikkiImg");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const valentineTopText = document.getElementById("valentineTopText");
+const leftBox = document.querySelector(".left-box");
 
 /* state */
 let visitedPages = new Set();
@@ -182,8 +183,7 @@ document.addEventListener("click", (e) => {
 
 /* letter stacking/flipping: clicking a letter brings it to front */
 stackLetters.forEach((ltr, idx) => {
-  ltr.addEventListener("click", (e) => {
-    e.stopPropagation();
+  ltr.addEventListener("mouseenter", () => {
     stackLetters.forEach(l => l.style.zIndex = 0);
     ltr.style.zIndex = 10;
   });
@@ -205,17 +205,20 @@ if (noBtn && yesBtn) {
   });
 
   yesBtn.addEventListener("click", () => {
-    sashaImg.src = "assets/sasha-tongue.png";
-    nikkiImg.src = "assets/nikki-tongue.png";
+  sashaImg.src = "assets/sasha-tongue.png";
+  nikkiImg.src = "assets/nikki-tongue.png";
 
-    valentineTopText.innerText =
-      "yayyyyy, now we're each other's valentines :)";
-    valentineTopText.style.opacity = "1";
+  valentineTopText.innerText =
+    "yayyyyy, now we're each other's valentines ^-^";
+  valentineTopText.style.opacity = "1";
 
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-  });
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
+
+  if (leftBox) leftBox.style.display = "none"; // 👈 hide Sasha’s paper
+});
 }
+
 
 
 
