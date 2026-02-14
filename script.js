@@ -146,7 +146,7 @@ if (bottle) {
       bottleStage = 1;
       // update caption text
       const caption = document.getElementById("thirdCaption");
-      if (caption) caption.innerText = "Oh, it's letters! We should open the bottle.";
+      if (caption) caption.innerText = "Oh, it's letters! Should we open the bottle, maybe?";
     }
     // stage 1 -> 2: replace with bottle-letter
     else if (bottleStage === 1) {
@@ -155,7 +155,7 @@ if (bottle) {
       bottleLetter.style.display = "block";
       bottleStage = 2;
       const caption = document.getElementById("thirdCaption");
-      if (caption) caption.innerText = "They seem to be addressed to you. . . so maybe you should open the letters?";
+      if (caption) caption.innerText = "They seem to be addressed to you. . . so you should be the one to open the letters!";
     }
   });
 }
@@ -218,6 +218,7 @@ if (noBtn && yesBtn) {
   if (leftBox) leftBox.style.display = "none"; // 👈 hide Sasha’s paper
 });
 }
+
 
 
 
