@@ -109,22 +109,39 @@
 <!-- ================= FOURTH PAGE (valentine) ================= -->
 <section id="valentinePage" class="page">
   <div class="valentine-container">
-    <div class="valentine-text" id="valentineTopText"></div>
 
-    <div class="character left">
-      <img id="sashaImg" src="assets/sasha-smile.png" alt="sasha">
-      <div class="paper-box">
-        <img src="assets/paper-box.png" alt="paper">
-        <p>be my valentine?</p>
-      </div>
-    </div>
+    <!-- success caption (hidden until YES) -->
+    <p class="valentine-caption" id="valentineTopText"></p>
 
-    <div class="character right">
-      <img id="nikkiImg" src="assets/nikki-smile.png" alt="nikki">
-      <div class="response-buttons">
-        <button id="yesBtn">yes!!</button>
-        <button id="noBtn">no... :(</button>
+    <div class="valentine-characters">
+
+      <!-- SASHA (LEFT) -->
+      <div class="valentine-character left">
+        <div class="paper-box left-box">
+          <img src="assets/paper-box.png" alt="">
+          <p>be my valentine?</p>
+        </div>
+
+        <img id="sashaImg" src="assets/sasha-smile.png" alt="sasha">
       </div>
+
+      <!-- NIKKI (RIGHT) -->
+      <div class="valentine-character right">
+        <img id="nikkiImg" src="assets/nikki-smile.png" alt="nikki">
+
+        <div class="paper-buttons">
+          <button id="yesBtn" class="paper-btn yes">
+            <img src="assets/paper-box.png" alt="">
+            <span>yes!!</span>
+          </button>
+
+          <button id="noBtn" class="paper-btn no">
+            <img src="assets/paper-box.png" alt="">
+            <span>no... :(</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -132,4 +149,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
