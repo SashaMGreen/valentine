@@ -283,7 +283,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 50px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -322,12 +322,12 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 /* Sasha’s paper */
 .left-box {
-  left: -280px;
+  left: -200px;
   top: 10px;
 }
 
@@ -351,7 +351,7 @@ body {
 }
 
 .paper-btn img {
-  width: 90%;
+  width: 70%;
   transform: scaleX(-1); /* FLIP paper */
 }
 
@@ -362,8 +362,9 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 25px;
 }
+
 
 
 
