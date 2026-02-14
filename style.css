@@ -49,7 +49,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 70px;
+  gap: 50px;
   position: relative;
   height: 100vh;
 }
@@ -311,6 +311,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
