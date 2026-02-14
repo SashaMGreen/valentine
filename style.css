@@ -70,8 +70,8 @@ body {
 .frame-img {
   position: absolute;
   inset: 0;
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   z-index: 1;
 }
@@ -131,6 +131,10 @@ body {
   width: 580px;
   cursor: pointer;
   display: block;
+}
+
+#letter-paper {
+  display: none; /* hidden by default; JS toggles via .hidden removal */
 }
 
 /* ================= THIRD PAGE ================= */
@@ -302,6 +306,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
