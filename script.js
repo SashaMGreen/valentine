@@ -187,27 +187,30 @@ stackLetters.forEach((ltr, idx) => {
 
 /* ---------------- VALENTINE PAGE ---------------- */
 /* yes / no behaviour */
-if (noBtn) {
-  noBtn.addEventListener("click", () => {
-    noClicks++;
-    if (noClicks === 1) {
-      sashaImg.src = "assets/sasha-mad.png";
-      nikkiImg.src = "assets/nikki-shocked.png";
-    } else if (noClicks >= 3) {
-      sashaImg.src = "assets/sasha-cry.png";
-    }
-  });
-}
+let noClicks = 0;
 
-if (yesBtn) {
-  yesBtn.addEventListener("click", () => {
-    sashaImg.src = "assets/sasha-tongue.png";
-    nikkiImg.src = "assets/nikki-tongue.png";
-    valentineTopText.innerText = "yayyyy! now we're officially each other's valentine :D";
-    // hide buttons after yes
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-  });
-}
+noBtn.addEventListener("click", () => {
+  noClicks++;
+
+  if (noClicks === 1) {
+    sashaImg.src = "assets/sasha-mad.png";
+    nikkiImg.src = "assets/nikki-shocked.png";
+  } else if (noClicks >= 3) {
+    sashaImg.src = "assets/sasha-cry.png";
+  }
+});
+
+yesBtn.addEventListener("click", () => {
+  sashaImg.src = "assets/sasha-tongue.png";
+  nikkiImg.src = "assets/nikki-tongue.png";
+
+  valentineTopText.innerText =
+    "yayyyyy, now we're each other's valentines :)";
+  valentineTopText.style.opacity = "1";
+
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
+});
+
 
 
