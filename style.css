@@ -42,6 +42,11 @@ body {
   z-index: 0;
 }
 
+.hidden {
+  display: none !important;
+}
+
+
 /* ================= HOME ================= */
 
 #home {
@@ -352,6 +357,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
 }
+
 
 
 
