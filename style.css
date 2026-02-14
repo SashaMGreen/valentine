@@ -49,7 +49,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   position: relative;
   height: 100vh;
 }
@@ -81,7 +81,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25%;         
+  width: 30%;         
   height: auto;
 }
 
@@ -101,7 +101,7 @@ body {
 /* Make the record container absolutely positioned so it can sit at the very bottom middle */
 .record-container {
   position: absolute;
-  bottom: 18px;            /* bottom middle */
+  bottom: 25px;            /* bottom middle */
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -352,6 +352,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
 }
+
 
 
 
