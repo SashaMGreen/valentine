@@ -304,7 +304,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 0px;
+  gap: -10px;
   align-items: center;
 }
 
@@ -395,6 +395,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 25px;
 }
+
 
 
 
