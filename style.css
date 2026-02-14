@@ -92,7 +92,7 @@ body {
 
 .number {
   position: absolute;
-  left: 12px;     /* pushes number outside frame */
+  left: 20px;     /* pushes number outside frame */
   font-size: 50px;
   font-family: 'Playfair Display', serif;
   color: #2b2b2b;
@@ -348,6 +348,16 @@ body {
   border: none;
   cursor: pointer;
   padding: 0;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.paper-btn:hover {
+  transform: scale(1.08) translateY(-4px);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+
+.paper-btn:active {
+  transform: scale(0.98) translateY(0);
 }
 
 .paper-btn img {
@@ -364,6 +374,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 25px;
 }
+
 
 
 
