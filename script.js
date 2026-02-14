@@ -114,19 +114,18 @@ if (recordPlayer) {
 
 /* ---------------- TYPEWRITER / LETTER ---------------- */
 /* clicking typewriter shows letter centered above everything */
-if (typewriter && letter-paper) {
+if (typewriter && letterPaper) {
   typewriter.addEventListener("click", (e) => {
     e.stopPropagation();
-    letter.classList.remove("hidden");
-    letter.style.display = "block"; // ensure visible
-    letter.style.zIndex = 20;
+    letterPaper.classList.remove("hidden");
+    letterPaper.style.display = "block";
+    letterPaper.style.zIndex = 20;
   });
 
-  // click outside to hide letter
   document.addEventListener("click", (e) => {
-    if (!letter.contains(e.target) && e.target !== typewriter) {
-      letter.classList.add("hidden");
-      letter.style.display = "none";
+    if (!letterPaper.contains(e.target) && e.target !== typewriter) {
+      letterPaper.classList.add("hidden");
+      letterPaper.style.display = "none";
     }
   });
 }
@@ -187,30 +186,30 @@ stackLetters.forEach((ltr, idx) => {
 
 /* ---------------- VALENTINE PAGE ---------------- */
 /* yes / no behaviour */
-let noClicks = 0;
 
-noBtn.addEventListener("click", () => {
-  noClicks++;
+if (noBtn && yesBtn) {
+  noBtn.addEventListener("click", () => {
+    noClicks++;
 
-  if (noClicks === 1) {
-    sashaImg.src = "assets/sasha-mad.png";
-    nikkiImg.src = "assets/nikki-shocked.png";
-  } else if (noClicks >= 3) {
-    sashaImg.src = "assets/sasha-cry.png";
-  }
-});
+    if (noClicks === 1) {
+      sashaImg.src = "assets/sasha-mad.png";
+      nikkiImg.src = "assets/nikki-shocked.png";
+    } else if (noClicks >= 3) {
+      sashaImg.src = "assets/sasha-cry.png";
+    }
+  });
 
-yesBtn.addEventListener("click", () => {
-  sashaImg.src = "assets/sasha-tongue.png";
-  nikkiImg.src = "assets/nikki-tongue.png";
+  yesBtn.addEventListener("click", () => {
+    sashaImg.src = "assets/sasha-tongue.png";
+    nikkiImg.src = "assets/nikki-tongue.png";
 
-  valentineTopText.innerText =
-    "yayyyyy, now we're each other's valentines :)";
-  valentineTopText.style.opacity = "1";
+    valentineTopText.innerText =
+      "yayyyyy, now we're each other's valentines :)";
+    valentineTopText.style.opacity = "1";
 
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-});
-
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+  });
+}
 
 
