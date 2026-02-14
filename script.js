@@ -209,7 +209,7 @@ if (noBtn && yesBtn) {
   nikkiImg.src = "assets/nikki-tongue.png";
 
   valentineTopText.innerText =
-    "yayyyyy, now we're each other's valentines ^-^";
+    "yayyyyy, now we're each other's valentines :DDD";
   valentineTopText.style.opacity = "1";
 
   yesBtn.style.display = "none";
@@ -218,6 +218,7 @@ if (noBtn && yesBtn) {
   if (leftBox) leftBox.style.display = "none"; // 👈 hide Sasha’s paper
 });
 }
+
 
 
 
