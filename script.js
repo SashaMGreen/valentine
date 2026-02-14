@@ -8,7 +8,7 @@ const music = document.getElementById("bgMusic");
 /* page-specific */
 const recordPlayer = document.getElementById("recordPlayer");
 const typewriter = document.getElementById("typewriter");
-const letter = document.getElementById("letter");
+const letter-paper = document.getElementById("letter-paper");
 
 const bottle = document.getElementById("bottle");
 const bottleLetter = document.getElementById("bottleLetter");
@@ -114,7 +114,7 @@ if (recordPlayer) {
 
 /* ---------------- TYPEWRITER / LETTER ---------------- */
 /* clicking typewriter shows letter centered above everything */
-if (typewriter && letter) {
+if (typewriter && letter-paper) {
   typewriter.addEventListener("click", (e) => {
     e.stopPropagation();
     letter.classList.remove("hidden");
@@ -209,3 +209,4 @@ if (yesBtn) {
     noBtn.style.display = "none";
   });
 }
+
