@@ -49,9 +49,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 70px;
   position: relative;
-  height: 100vh;
+  height: 150vh;
 }
 
 .frame {
@@ -64,7 +64,7 @@ body {
 }
 
 .frame:hover {
-  transform: scale(1.08) rotate(1deg);
+  transform: scale(1.08) rotate(0deg);
 }
 
 .frame-img {
@@ -109,15 +109,15 @@ body {
 /* Make the record container absolutely positioned so it can sit at the very bottom middle */
 .record-container {
   position: absolute;
-  bottom: 5px;            /* bottom middle */
-  left: 49%;
+  bottom: 10px;            /* bottom middle */
+  left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
 }
 
 #recordPlayer {
-  width: 350px;
+  width: 280px;
   cursor: pointer;
   display: block;
   margin: 0 auto;
@@ -128,15 +128,15 @@ body {
 /* typewriter container anchored with bottom negative so it peeks in */
 .type-container {
   position: absolute;
-  bottom: -60px;           /* pushes it slightly below page so bottom is cropped */
-  left: 49%;
+  bottom: -70px;           /* pushes it slightly below page so bottom is cropped */
+  left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
 }
 
 #typewriter {
-  width: 540px;
+  width: 580px;
   cursor: pointer;
   display: block;
 }
@@ -163,27 +163,27 @@ body {
 /* when bottle moves to center and grows */
 #bottle.center {
   left: 50%;
-  top: 45%;
+  top: 52%;
   bottom: auto;
   transform: translate(-50%, -50%);
-  width: 170px;
+  width: 150px;
   z-index: 6;
 }
 
 /* bottle-letter (replaces bottle) centered above everything */
 #bottleLetter {
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
+  width: 300px;
   z-index: 6;
 }
 
 /* stacked letters container */
 #lettersRow {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -310,6 +310,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
