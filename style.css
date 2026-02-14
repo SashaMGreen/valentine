@@ -133,10 +133,6 @@ body {
   display: block;
 }
 
-#letter-paper {
-  display: none; /* hidden by default; JS toggles via .hidden removal */
-}
-
 /* ================= THIRD PAGE ================= */
 
 .third-container {
@@ -306,6 +302,7 @@ body {
   cursor: pointer;
   background: white;
 }
+
 
 
 
