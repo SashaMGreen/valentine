@@ -92,8 +92,8 @@ body {
 
 .number {
   position: absolute;
-  left: -60px;     /* pushes number outside frame */
-  font-size: 52px;
+  left: -10px;     /* pushes number outside frame */
+  font-size: 60px;
   font-family: 'Playfair Display', serif;
   color: #2b2b2b;
   opacity: 0.85;
@@ -283,7 +283,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 100px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -327,14 +327,14 @@ body {
 
 /* Sasha’s paper */
 .left-box {
-  left: -240px;
-  top: 30px;
+  left: -280px;
+  top: 10px;
 }
 
 /* Nikki buttons */
 .paper-buttons {
   position: absolute;
-  right: -240px;
+  right: -200px;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -351,7 +351,7 @@ body {
 }
 
 .paper-btn img {
-  width: 100%;
+  width: 90%;
   transform: scaleX(-1); /* FLIP paper */
 }
 
@@ -364,6 +364,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
 }
+
 
 
 
